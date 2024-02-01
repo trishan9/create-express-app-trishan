@@ -64,16 +64,11 @@ import("chalk").then(({ default: chalk }) => {
   }
 
   emitter.clone(flags.d).then(() => {
-    console.log(chalk.bgBlack.cyan("Installing dependencies..."));
-    const command = /^win/.test(process.platform) ? "npm.cmd" : "npm";
-    return runCommand(command, ["install"], {
-      cwd: `${process.cwd()}/${flags.d}`,
-    }).then(() => {
-      console.log(chalk.bgBlack.cyan("Done! 🏁"));
-      console.log("");
-      console.log(chalk.bgBlack.white("To get started:"));
-      console.log(chalk.bgBlack.cyan(`cd ${flags.d}`));
-      console.log(chalk.bgBlack.cyan("npm run dev"));
-    });
+    console.log(chalk.bgBlack.cyan("Done! 🏁"));
+    console.log("");
+    console.log(chalk.bgBlack.white("To get started:"));
+    console.log(chalk.bgBlack.cyan(`cd ${flags.d}`));
+    console.log(chalk.bgBlack.cyan("yarn / npm i / pnpm i / bun i"));
+    console.log(chalk.bgBlack.cyan("yarn / npm / pnpm / bun run dev"));
   });
 });
